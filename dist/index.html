@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="bundle.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <div class="header">Todo List</div>
+
+    <div class="projects">
+        <h4 class="projects-list-title">Projects</h4>
+        <ul class="projects-list">        </ul>
+        <form action="" data-new-project-form>
+            <input type="text" class="add project" data-new-project-input placeholder="add new project"/>
+            <button class="btn create">+</button>
+        </form>
+    </div>
+
+    <div class="task-list">
+        <div class="task-list-header">
+            <h2 class="task-list-title"></h2>
+            <p class="task-list-counter"></p>
+        </div>
+
+        <div class="task-list-body">
+            <div class="tasks" data-tasks>
+            </div>
+        </div>
+
+        <div class="new-task" data-new-task-form>
+            <form action="">
+                <input type="text" data-new-task-input class="add task" placeholder="add new task"/>
+                <button class="btn create">+</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>kxzd</p>
+        <a href="https://github.com/kxzd">
+            <i class="fa fa-github fa-2x"></i>
+        </a>
+    </div>
+
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox" class="task-checkbox">
+            <label><span class="custom-checkbox"></span></label>
+            <button class="task-delete">X</button>
+        </div>
+    </template>
+</body>
+</html>
