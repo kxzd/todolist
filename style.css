@@ -1,0 +1,243 @@
+:root {
+    --primary-high: #858585; 
+    --primary-med: #d1d1d1;
+    --primary-low: #ededed;
+    --checkbox-clr: black;
+}
+
+*,
+*::before, 
+*::after {
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+    background: var(--primary-low);
+    display: grid;
+    grid: 
+    "header header header header" auto
+    "projects tasks tasks ." auto 
+    "footer footer footer footer" auto /
+    1fr minmax(150px, 300px) minmax(250px, 400px) 1fr;
+}
+
+.header {
+    padding-left: 25px;
+    grid-area: header;
+    letter-spacing: 1px;
+    font-size: 36px;
+    font-weight: 1000;
+    background: var(--primary-high);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projects {
+    min-height: 85vh;
+    max-width: 300px;
+    grid-area: projects;
+    background-color: var(--primary-med);
+}
+
+.projects-list-title {
+    padding: 1.5rem;
+    margin-bottom: -2rem;
+}
+
+.projects-list {
+    padding: 1.5rem;
+    margin-left: 2rem;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    list-style: circle;
+}
+
+.project-name {
+    cursor: pointer;
+    display: flex;
+}
+
+.project-name:hover {
+    opacity: 0.7;
+}
+
+.active-project-item {
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    padding: 25px;
+}
+
+.task-list .add.task {
+    width: 100%;
+}
+
+
+.btn {
+    cursor: pointer;
+    background: 0;
+    border: 0;
+    padding: 0;
+    color: inherit;
+}
+
+.btn.create {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-right: 5px;
+    transition: opacity 150ms ease-in;
+}
+
+.btn.create:hover {
+    opacity: 0.5;
+}
+
+.add {
+    font-size:  inherit;
+    color: #000;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #000;
+    outline: none;
+    transition: border-bottom 25ms ease-in;
+}
+
+.new-task .add.task {
+    padding: 3px;
+}
+
+.add:focus {
+    border-bottom: 2px solid #000;
+}
+
+.add:focus::placeholder {
+    opacity: 0.2;
+}
+
+.task-list {
+    grid-area: tasks;
+    margin-top: 50px;    
+}
+
+.task-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-list-counter {
+    font-size: 16px;
+}
+
+.task-list-title {
+    margin: 0;
+}
+
+.task {
+    margin: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    margin-bottom: 1.25em;
+}
+
+
+
+
+.task-checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+
+.task button,
+.projects button {
+    margin-left: auto;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+
+.task::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -0.5em;
+    height: 2px;
+    background: black;
+    opacity: 0.15;
+}
+
+
+
+.custom-checkbox {
+    display: inline-block;
+    width: 14px;;
+    height: 14px;
+    cursor: pointer;
+    border: 2px solid var(--checkbox-clr);
+    border-radius: 50%;
+    margin-right: 14px;
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+}
+
+.task:hover .custom-checkbox, 
+.task-checkbox:focus + label .custom-checkbox {
+    transform: scale(1.2);
+    color: var(--checkbox-clr)
+}
+
+.task-checkbox:checked + label .custom-checkbox {
+    background: var(--checkbox-clr);
+    border-color: var(--checkbox-clr);
+    box-shadow: inset 0 0 0 2px white;
+}
+
+.task-checkbox:checked + label{
+    opacity: 0.5;
+}
+
+
+
+
+
+.footer {
+    border-top: 1px solid black;
+    font-size: 16px;
+    grid-area: footer;
+    background-color: var(--primary-med);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer i {
+    font-size: 28px;
+    position: relative;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: black;
+}
+
